@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:render section="Header" arguments="{_all}" />
+		<f:render section="Text" arguments="{_all}" />
+	</f:section>
+
+	<f:section name="Header">
+		<f:if condition="{header}">
+			<header class="hero--title">
+				<f:render partial="Header/Header" arguments="{header: header, layout: headerLayout}" />
+			</header>
+		</f:if>
+	</f:section>
+
+	<f:section name="Text">
+		<f:if condition="{text}">
+			<f:format.html>{text}</f:format.html>
+		</f:if>
+	</f:section>
+</html>
