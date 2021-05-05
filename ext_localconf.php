@@ -6,7 +6,7 @@ call_user_func(
 
 		// PageTs
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-			'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ce_icon_text/Configuration/TSConfig/Page.t3s">'
+			'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ce_hero/Configuration/TSConfig/Page.t3s">'
 		);
 	}
 );
