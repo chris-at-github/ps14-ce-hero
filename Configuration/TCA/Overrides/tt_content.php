@@ -4,7 +4,7 @@
 // Icon Text Module von TT-Content
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
-		'LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.title',
+		'LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.title',
 		'ce_hero',
 		'content-image'
 	),
@@ -27,6 +27,11 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['bodytext']['config'] = [
+	'enableRichtext' => true,
+	'richtextConfiguration' => 'xoDefault',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['config'] = [
 	'enableRichtext' => true,
 	'richtextConfiguration' => 'xoDefault',
 ];
