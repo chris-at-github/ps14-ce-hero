@@ -1,0 +1,20 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Bootstrap & XNA
+@import '../../../../xna/Resources/Public/Sass/functions';
+@import '../../../../xna/Resources/Public/Sass/variables';
+@import '../../../../xna/Resources/Public/Sass/mixins';
+@import '../../../../xna/Resources/Public/Sass/definitions';
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Variablen
+$ce-hero--use-css: true !default;
+
+@if($ce-hero--use-css) {
+	* {
+		background: red;
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// XNA Override
+@import '../../../../xna/Resources/Public/Sass/xna/modules/hero';

@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			ce_hero {
+				iconIdentifier = content-image
+				title = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.title
+				description = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.description
+				tt_content_defValues {
+					CType = ce_hero
+				}
+			}
+		}
+
+		show := addToList(ce_hero)
+	}
+}
