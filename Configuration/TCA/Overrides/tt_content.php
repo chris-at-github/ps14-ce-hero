@@ -32,6 +32,5 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['bodytext'
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['config'] = [
-	'enableRichtext' => true,
-	'richtextConfiguration' => 'xoDefault',
+	'maxitems' => 1,
 ];
