@@ -34,3 +34,17 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['bodytext'
 $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['config'] = [
 	'maxitems' => 1,
 ];
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Hero Slider
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+//	array(
+//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title',
+//		'xo_hero_slider',
+//		'content-textpic'
+//	),
+//	'CType',
+//	'xo_hero_slider'
+//);
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_hero_slider'] = $GLOBALS['TCA']['tt_content']['types']['xo_slider'];

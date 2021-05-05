@@ -24,4 +24,9 @@ tt_content {
 			120 = Ps14\CeHero\DataProcessing\ModuleProcessor
 		}
 	}
+
+#	xo_hero_slider =< tt_content.xo_slider
+#	xo_hero_slider {
+#		templateName = HeroSlider.html
+#	}
 }

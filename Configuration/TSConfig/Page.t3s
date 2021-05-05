@@ -9,6 +9,15 @@ mod.wizards.newContentElement.wizardItems {
 					CType = ce_hero
 				}
 			}
+
+#			xo_hero_slider {
+#				iconIdentifier = content-textpic
+#				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title
+#				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.description
+#				tt_content_defValues {
+#					CType = xo_hero_slider
+#				}
+#			}
 		}
 
 		show := addToList(ce_hero)
