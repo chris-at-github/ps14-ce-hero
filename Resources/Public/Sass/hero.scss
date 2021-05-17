@@ -60,6 +60,7 @@ $ce-hero--layout-slider: true !default;
 	}
 
 	@if($ce-hero--layout-slider) {
+		// Abgleich mit Slider Definitions
 		.ce-hero-slider {
 			& {
 				position: relative;
