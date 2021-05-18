@@ -3,15 +3,15 @@ tt_content {
 	ce_hero {
 		templateName = Hero.html
 		layoutRootPaths {
-			50 = EXT:ce_hero/Resources/Private/Layouts/
+			10 = EXT:ce_hero/Resources/Private/Layouts/
 		}
 
 		templateRootPaths {
-			50 = EXT:ce_hero/Resources/Private/Templates/
+			10 = EXT:ce_hero/Resources/Private/Templates/
 		}
 
 		partialRootPaths {
-			50 = EXT:ce_hero/Resources/Private/Partials/
+			10 = EXT:ce_hero/Resources/Private/Partials/
 		}
 
 		dataProcessing {

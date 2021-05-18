@@ -2,7 +2,7 @@ var mix = require('laravel-mix');
 
 // Stopping at 95% emitting
 // @see: https://github.com/JeffreyWay/laravel-mix/issues/1126
-mix.setPublicPath('.');
+mix.setPublicPath('../../../');
 
 // No Noise
 // @see: https://laravel.com/docs/5.6/mix#notifications
@@ -14,8 +14,7 @@ mix.options({
 	processCssUrls: false
 });
 
-// mix.js('typo3conf/ext/xna/Resources/Public/Js/xna.js', 'assets/js/xna.js')
-mix.sass('Resources/Public/Sass/hero.scss', '../../../../assets/css/modules/hero.css')
+mix.sass('Resources/Public/Sass/hero.scss', 'assets/css/modules/hero.css')
 	.options({
 		postCss: [
 			require('postcss-cachebuster'),
@@ -27,6 +26,5 @@ mix.sass('Resources/Public/Sass/hero.scss', '../../../../assets/css/modules/hero
 );
 
 if(mix.inProduction() === true) {
-	// mix.minify(['assets/js/xna.js', 'assets/js/xna-inline.js']);
 	mix.minify(['../../../assets/css/modules/hero.css']);
 }
