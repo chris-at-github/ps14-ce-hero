@@ -9,13 +9,6 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements DataProcessorInterface {
 
 	/**
-	 * @var string[]
-	 */
-	protected $importCssFiles = [
-		'/assets/css/modules/hero.css'
-	];
-
-	/**
 	 * @param ContentObjectRenderer $contentObject The data of the content element or page
 	 * @param array $contentObjectConfiguration The configuration of Content Object
 	 * @param array $processorConfiguration The configuration of this processor
@@ -37,6 +30,6 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 			$processedData['data']['identifier'] = $identifier;
 		}
 
-		return $processedData;
+		return parent::process($contentObject, $contentObjectConfiguration, $processorConfiguration, $processedData);
 	}
 }
