@@ -10,16 +10,16 @@ mod.wizards.newContentElement.wizardItems {
 				}
 			}
 
-#			xo_hero_slider {
-#				iconIdentifier = content-textpic
-#				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title
-#				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.description
-#				tt_content_defValues {
-#					CType = xo_hero_slider
-#				}
-#			}
+			ce_hero_slider {
+				iconIdentifier = content-image
+				title = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.title
+				description = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.description
+				tt_content_defValues {
+					CType = ce_hero_slider
+				}
+			}
 		}
 
-		show := addToList(ce_hero)
+		show := addToList(ce_hero, ce_hero_slider)
 	}
 }

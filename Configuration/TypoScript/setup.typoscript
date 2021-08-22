@@ -24,8 +24,10 @@ tt_content {
 				references.fieldName = image
 			}
 
-			120 = Ps14\CeHero\DataProcessing\ModuleProcessor
-			120 {
+			120 = Ps\Xo\DataProcessing\SettingsProcessor
+
+			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			130 {
 				importCss {
 					10 = /assets/css/modules/hero.css
 				}
@@ -33,8 +35,61 @@ tt_content {
 		}
 	}
 
-#	xo_hero_slider =< tt_content.xo_slider
-#	xo_hero_slider {
-#		templateName = HeroSlider.html
-#	}
+	ce_hero_slider =< tt_content.xo_slider
+	ce_hero_slider {
+		templateName = HeroSlider.html
+		layoutRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Layouts/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Layouts/
+		}
+
+		templateRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Templates/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Templates/
+		}
+
+		partialRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Partials/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Partials/
+		}
+
+		dataProcessing {
+			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+			30 {
+				as = elements
+				table = tx_xo_domain_model_elements
+				pidInList.field = pid
+				where {
+					data = field:uid
+					intval = 1
+					wrap = tx_xo_content=|
+				}
+				orderBy = sorting
+
+				dataProcessing {
+					10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+					10 {
+						as = media
+						references.fieldName = media
+					}
+				}
+			}
+
+			120 = Ps\Xo\DataProcessing\SettingsProcessor
+
+			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			130 {
+				importCss {
+					10 = /assets/css/modules/hero.css
+				}
+			}
+		}
+	}
 }
+
+plugin.tx_xo.settings.modules {
+	ce_hero {
+	}
+}
+
+module.tx_xo.settings.modules.ce_hero < plugin.tx_xo.settings.modules.ce_hero
