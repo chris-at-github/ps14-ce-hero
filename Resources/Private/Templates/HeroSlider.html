@@ -4,28 +4,30 @@
 		<f:if condition="{elements -> f:count()} == 1">
 			<f:then>
 				<f:render partial="Item" section="Main" arguments="{
-					identifier: elements.0.data.identifier
-					header: elements.0.data.title,
-					headerLayout: elements.0.data.title_type,
-					text: elements.0.data.bodytext,
-					media: elements.0.media.0
-				}" />
+				identifier: elements.0.data.identifier
+				header: elements.0.data.title,
+				headerLayout: elements.0.data.title_type,
+				text: elements.0.data.bodytext,
+				media: elements.0.media.0
+			}" />
 			</f:then>
 
 			<f:else if="{elements -> f:count()} > 1">
-				<ul class="slider--container">
-					<f:for each="{elements}" as="element" iteration="iterator">
-						<li class="slider--item" data-index="{iterator.index}">
-							<f:render partial="Item" section="Main" arguments="{
+				<div class="hero--slider slider">
+					<ul class="slider--container">
+						<f:for each="{elements}" as="element" iteration="iterator">
+							<li class="slider--item" data-index="{iterator.index}">
+								<f:render partial="Item" section="Main" arguments="{
 								identifier: element.data.identifier
 								header: element.data.title,
 								headerLayout: element.data.title_type,
 								text: element.data.bodytext,
 								media: element.media.0
 							}" />
-						</li>
-					</f:for>
-				</ul>
+							</li>
+						</f:for>
+					</ul>
+				</div>
 			</f:else>
 		</f:if>
 	</f:section>
