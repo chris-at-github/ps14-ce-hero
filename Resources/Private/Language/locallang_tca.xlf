@@ -20,6 +20,29 @@
 			<trans-unit id="tx_xo_domain_model_elements.record_type.slider_image">
 				<source>Image</source>
 			</trans-unit>
+
+			<trans-unit id="tx_ce_hero_slider.tab.main">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.tab.slider">
+				<source>Slider</source>
+			</trans-unit>
+
+			<trans-unit id="tx_ce_hero_slider.settings.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.layouts.fullwidth">
+				<source>Full Width</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.layouts.16_9">
+				<source>16:9</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.controls">
+				<source>Display controls</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.navigation">
+				<source>Display navigation</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

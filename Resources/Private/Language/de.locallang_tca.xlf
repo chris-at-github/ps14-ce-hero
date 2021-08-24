@@ -16,6 +16,29 @@
 			<trans-unit id="tx_ce_hero_slider.description">
 				<target>Hero slider element.</target>
 			</trans-unit>
+
+			<trans-unit id="tx_ce_hero_slider.tab.main">
+				<target>Allgemein</target>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.tab.slider">
+				<target>Slider</target>
+			</trans-unit>
+
+			<trans-unit id="tx_ce_hero_slider.settings.layout">
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.layouts.fullwidth">
+				<target>Volle Laufweite</target>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.layouts.16_9">
+				<target>16:9</target>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.controls">
+				<target>Zeige Sliderpfeile</target>
+			</trans-unit>
+			<trans-unit id="tx_ce_hero_slider.settings.navigation">
+				<target>Zeige Slidernavigation</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
