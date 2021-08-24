@@ -19,7 +19,7 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 
 		// Layoutklasse
 		if(isset($processedData['flexform']) === true && isset($processedData['data']['frame_classes']) === true) {
-			$processedData['data']['frame_classes'] .= ' ' . str_replace('_', '-', $processedData['data']['CType']) . '--layout-' . $processedData['flexform']['settings']['layout'];
+			$processedData['data']['frame_classes'] .= ' ce-hero--layout-' . $processedData['flexform']['settings']['layout'];
 		}
 
 		// Einfaches Hero Modul

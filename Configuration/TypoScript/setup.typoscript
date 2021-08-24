@@ -24,6 +24,12 @@ tt_content {
 				references.fieldName = image
 			}
 
+			110 = Ps\Xo\DataProcessing\FlexFormProcessor
+			110 {
+				fieldName = pi_flexform
+				as = flexform
+			}
+
 			120 = Ps\Xo\DataProcessing\SettingsProcessor
 
 			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
@@ -99,11 +105,9 @@ tt_content {
 
 plugin.tx_xo.settings.modules {
 	ce_hero {
-		slider {
-			layouts {
-				// fullwidth = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.settings.layouts.fullwidth
-				16-9 = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.settings.layouts.16_9
-			}
+		layouts {
+			// fullwidth = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layouts.fullwidth
+			16-9 = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layouts.16_9
 		}
 	}
 }

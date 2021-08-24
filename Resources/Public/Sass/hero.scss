@@ -29,32 +29,53 @@ $ce-hero--layout-slider: true !default;
 }
 
 %hero {
-	& {
-		min-height: rem(500px);
-		padding-top: 0.1px;
-		padding-bottom: 0.1px;
-		background-position: center center;
-		background-size: cover;
-		position: relative;
-		z-index: 5;
-	}
 
-	.container-inner {
-		margin-top: rem(35px);
-	}
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
 // CSS
 @if($ce-hero--use-css) {
-
 	.ce-hero {
-		& {
-			@extend %hero;
-		}
-
 		.hero--title {
 			@extend %hero--title;
+		}
+
+		.hero--image {
+			img {
+				@extend %image-responsive;
+			}
+		}
+	}
+
+	.ce-hero--layout-16-9 {
+		.hero--image {
+			& {
+				position: relative;
+				padding-top: 56.25%;
+			}
+
+			img {
+				position: absolute;
+				top: 0; left: 0; right: 0;
+			}
+		}
+	}
+
+	.ce-hero--layout-fullwidth {
+		.hero {
+			& {
+				min-height: rem(500px);
+				padding-top: 0.1px;
+				padding-bottom: 0.1px;
+				background-position: center center;
+				background-size: cover;
+				position: relative;
+				z-index: 5;
+			}
+
+			.container-inner {
+				margin-top: rem(35px);
+			}
 		}
 	}
 
@@ -144,7 +165,7 @@ $ce-hero--layout-slider: true !default;
 
 			// ---------------------------------------------------------------------------------------------------------------
 			// Layout 16:9
-			&.ce-hero-slider--layout-16-9 {
+			&.ce-hero--layout-16-9 {
 				.slider {
 					@extend %slider-navigation;
 					padding: 56.25% 0 0 0;
@@ -160,7 +181,7 @@ $ce-hero--layout-slider: true !default;
 
 			// ---------------------------------------------------------------------------------------------------------------
 			// Layout Fullwidth
-			&.ce-hero-slider--layout-fullwidth {
+			&.ce-hero--layout-fullwidth {
 				.slider, .slider--prev, .slider--next {
 					min-height: rem(400px);
 				}
@@ -173,7 +194,7 @@ $ce-hero--layout-slider: true !default;
 			}
 
 			@include media-breakpoint-up(md) {
-				&.ce-hero-slider--layout-fullwidth {
+				&.ce-hero--layout-fullwidth {
 					.slider, .slider--prev, .slider--next, .hero {
 						height: rem(500px);
 					}
@@ -181,7 +202,7 @@ $ce-hero--layout-slider: true !default;
 			}
 
 			@include media-breakpoint-up(lg) {
-				&.ce-hero-slider--layout-fullwidth {
+				&.ce-hero--layout-fullwidth {
 					.slider, .slider--prev, .slider--next, .hero {
 						height: rem(600px);
 					}

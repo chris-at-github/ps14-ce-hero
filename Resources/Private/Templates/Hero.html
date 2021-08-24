@@ -3,11 +3,13 @@
 	<f:section name="Header" />
 	<f:section name="Main">
 		<f:spaceless>
-			<f:render partial="Content" section="Main" arguments="{header: data.header, headerLayout: data.header_layout, text: data.bodytext}" />
-
-			<f:if condition="{image.0}">
-				<f:render partial="Media" section="Main" arguments="{media: image.0, identifier: data.identifier}" />
-			</f:if>
+			<f:render partial="Item" section="Main" arguments="{
+				identifier: data.identifier
+				header: data.header,
+				headerLayout: data.header_layout,
+				text: data.bodytext,
+				media: image.0
+			}" />
 		</f:spaceless>
 	</f:section>
 </html>
