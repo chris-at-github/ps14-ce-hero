@@ -13,7 +13,7 @@
 			</f:then>
 
 			<f:else if="{elements -> f:count()} > 1">
-				<div class="hero--slider slider">
+				<div class="slider">
 					<ul class="slider--container">
 						<f:for each="{elements}" as="element" iteration="iterator">
 							<li class="slider--item" data-index="{iterator.index}">
