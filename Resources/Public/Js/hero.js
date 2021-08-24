@@ -23,6 +23,7 @@
 					items: 1,
 					gutter: 0,
 					autoplay: true,
+					autoplayTimeout: 7500,
 					autoplayButtonOutput: false,
 					animateIn: 'tns-fadeIn',
 					animateOut: 'tns-fadeOut',
