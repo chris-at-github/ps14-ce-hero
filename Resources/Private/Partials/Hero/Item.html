@@ -2,10 +2,10 @@
 	<f:layout name="Default" />
 	<f:section name="Main">
 		<f:spaceless>
-			<f:render partial="Content" section="Main" arguments="{_all}" />
+			<f:render partial="Hero/Content" section="Main" arguments="{_all}" />
 
 			<f:if condition="{media}">
-				<f:render partial="Media" section="Main" arguments="{media: media, settings: settings.modules.ce_hero.image}" />
+				<f:render partial="Hero/Media" section="Main" arguments="{media: media, settings: settings.modules.ce_hero.image}" />
 			</f:if>
 		</f:spaceless>
 	</f:section>

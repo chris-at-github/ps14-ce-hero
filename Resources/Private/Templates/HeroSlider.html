@@ -3,7 +3,7 @@
 	<f:section name="Main">
 		<f:if condition="{elements -> f:count()} == 1">
 			<f:then>
-				<f:render partial="Item" section="Main" arguments="{
+				<f:render partial="Hero/Item" section="Main" arguments="{
 				identifier: elements.0.data.identifier
 				header: elements.0.data.title,
 				headerLayout: elements.0.data.title_type,
@@ -17,13 +17,13 @@
 					<ul class="slider--container">
 						<f:for each="{elements}" as="element" iteration="iterator">
 							<li class="slider--item" data-index="{iterator.index}">
-								<f:render partial="Item" section="Main" arguments="{
-								identifier: element.data.identifier
-								header: element.data.title,
-								headerLayout: element.data.title_type,
-								text: element.data.bodytext,
-								media: element.media.0
-							}" />
+								<f:render partial="Hero/Item" section="Main" arguments="{
+									identifier: element.data.identifier
+									header: element.data.title,
+									headerLayout: element.data.title_type,
+									text: element.data.bodytext,
+									media: element.media.0
+								}" />
 							</li>
 						</f:for>
 					</ul>
