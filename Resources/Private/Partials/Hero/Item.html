@@ -2,11 +2,13 @@
 	<f:layout name="Default" />
 	<f:section name="Main">
 		<f:spaceless>
-			<f:render partial="Hero/Content" section="Main" arguments="{_all}" />
+			<div class="hero {f:if(condition: '{xo:media.isImage(file: media)}', then: 'hero--image')}">
+				<f:render partial="Hero/Content" section="Main" arguments="{_all}" />
 
-			<f:if condition="{media}">
-				<f:render partial="Hero/Media" section="Main" arguments="{media: media, settings: settings.modules.ce_hero.image}" />
-			</f:if>
+				<f:if condition="{media} && {xo:media.isImage(file: media)}">
+					<f:render partial="Hero/Media" section="{settings.image.renderMode -> xo:format.ucFirst()}" arguments="{media: media, settings: settings.image}" />
+				</f:if>
+			</div>
 		</f:spaceless>
 	</f:section>
 </html>
