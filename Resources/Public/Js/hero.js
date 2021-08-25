@@ -28,9 +28,9 @@
 					animateIn: 'tns-fadeIn',
 					animateOut: 'tns-fadeOut',
 					controls: (controls !== null),
-					controlsContainer: node.querySelector('.slider--controls .slider--controls-inner'),
+					controlsContainer: controls,
 					nav: (navigation !== null),
-					navContainer: node.querySelector('.slider--navigation .slider--navigation-inner ul'),
+					navContainer: navigation.querySelector('ul'),
 					onInit: function() {
 						xna.addSliderInitializedClass(node);
 						xna.fixFocusInSlider(node, slider);
