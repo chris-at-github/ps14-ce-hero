@@ -28,21 +28,19 @@ $ce-hero--layout-slider: true !default;
 	}
 }
 
-%hero {
-
-}
-
 // ---------------------------------------------------------------------------------------------------------------------
 // CSS
 @if($ce-hero--use-css) {
-	.ce-hero {
-		.hero--title {
-			@extend %hero--title;
-		}
+	@if($ce-hero--layout-default) {
+		.ce-hero {
+			.hero--title {
+				@extend %hero--title;
+			}
 
-		.hero--image {
-			img {
-				@extend %image-responsive;
+			.hero--image {
+				img {
+					@extend %image-responsive;
+				}
 			}
 		}
 	}
@@ -81,6 +79,11 @@ $ce-hero--layout-slider: true !default;
 
 	@if($ce-hero--layout-slider) {
 		.ce-hero-slider {
+			.hero--image {
+				img {
+					@extend %image-responsive;
+				}
+			}
 
 			// ---------------------------------------------------------------------------------------------------------------
 			// Allgemeine Slider-Angaben
