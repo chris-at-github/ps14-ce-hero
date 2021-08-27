@@ -164,6 +164,7 @@ $ce-hero--layout-slider: true !default;
 			.slider--navigation {
 				position: absolute;
 				bottom: rem(46px);
+				z-index: 10;
 				width: 100%;
 			}
 
