@@ -10,6 +10,7 @@
 $ce-hero--use-css: true !default;
 $ce-hero--layout-default: true !default;
 $ce-hero--layout-slider: true !default;
+$ce-hero--layout-container: true !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Definitions
@@ -55,6 +56,16 @@ $ce-hero--layout-slider: true !default;
 
 		.hero--title {
 			@extend %hero--title;
+		}
+
+		.hero--background {
+			position: absolute;
+			top: -1px; bottom: -1px;
+			left: 0;
+			width: 100%;
+			z-index: -1;
+			background-position: center center;
+			background-size: cover;
 		}
 	}
 
@@ -168,6 +179,9 @@ $ce-hero--layout-slider: true !default;
 				}
 			}
 		}
+	}
+	@if($ce-hero--layout-container) {
+
 	}
 }
 
