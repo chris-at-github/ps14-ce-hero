@@ -5,7 +5,7 @@
 	</f:section>
 
 	<f:section name="Header">
-		<f:if condition="{header}">
+		<f:if condition="{header} && {headerLayout} != 100">
 			<header class="hero--title">
 				<f:render partial="Header/Header" arguments="{header: header, layout: headerLayout}" />
 			</header>
