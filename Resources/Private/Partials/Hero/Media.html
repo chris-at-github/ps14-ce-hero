@@ -1,9 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
+		{media.extension -> xo:format.toLower()}
+		<f:debug>{media}</f:debug>
 		<f:if condition="{media.extension -> xo:format.toLower()} == 'svg'">
 			<f:then>
 				<f:render section="Svg" arguments="{_all}" />
 			</f:then>
+			<f:else if="{media.extension -> xo:format.toLower()} == 'mp4'">
+				<f:render section="Video" arguments="{_all}" />
+			</f:else>
 			<f:else>
 				<f:render section="Background" arguments="{_all}" />
 			</f:else>
@@ -12,6 +17,17 @@
 
 	<f:section name="Svg">
 		<xo:svg.inline source="{media.publicUrl}" attributes="{'class': 'hero--background'}" />
+	</f:section>
+
+	<f:section name="Video">
+		<f:render partial="Components/Media" section="Video" arguments="{
+				file: media,
+				options: {
+					autoplay: 1,
+					controls: 0,
+					loop: 1
+				}
+			}" />
 	</f:section>
 
 	<f:section name="Background">

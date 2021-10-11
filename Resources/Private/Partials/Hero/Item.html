@@ -8,6 +8,10 @@
 				<f:if condition="{media} && {xo:media.isImage(file: media)}">
 					<f:render partial="Hero/Media" section="{settings.image.renderMode -> xo:format.ucFirst()}" arguments="{media: media, settings: settings.image}" />
 				</f:if>
+
+				<f:if condition="{media} && {xo:media.isVideo(file: media)}">
+					<f:render partial="Hero/Media" section="Video" arguments="{media: media, settings: settings}" />
+				</f:if>
 			</div>
 		</f:spaceless>
 	</f:section>
