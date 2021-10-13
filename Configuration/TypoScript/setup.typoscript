@@ -39,7 +39,7 @@ tt_content {
 				}
 
 				importJs {
-					10 = /assets/js/hero.js
+					10 = /assets/js/modules/hero.js
 				}
 			}
 		}
@@ -100,7 +100,7 @@ tt_content {
 				}
 
 				importJs {
-					10 = /assets/js/hero.js
+					10 = /assets/js/modules/hero.js
 				}
 			}
 		}

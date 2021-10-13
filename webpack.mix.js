@@ -14,7 +14,7 @@ mix.options({
 	processCssUrls: false
 });
 
-mix.js('Resources/Public/Js/hero.js', 'assets/js/hero.js');
+mix.js('Resources/Public/Js/hero.js', 'assets/js/modules/hero.js');
 mix.sass('Resources/Public/Sass/hero.scss', 'assets/css/modules/hero.css')
 	.options({
 		postCss: [
@@ -27,6 +27,6 @@ mix.sass('Resources/Public/Sass/hero.scss', 'assets/css/modules/hero.css')
 );
 
 if(mix.inProduction() === true) {
-	mix.minify(['../../../assets/js/hero.js']);
+	mix.minify(['../../../assets/js/modules/hero.js']);
 	mix.minify(['../../../assets/css/modules/hero.css']);
 }
