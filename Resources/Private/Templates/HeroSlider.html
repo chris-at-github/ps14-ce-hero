@@ -4,7 +4,7 @@
 		<f:if condition="{elements -> f:count()} == 1">
 			<f:then>
 				<f:render partial="Hero/Item" section="Main" arguments="{
-				identifier: elements.0.data.identifier
+				identifier: elements.0.data.identifier,
 				header: elements.0.data.title,
 				headerLayout: elements.0.data.title_type,
 				text: elements.0.data.bodytext,
@@ -19,7 +19,7 @@
 						<f:for each="{elements}" as="element" iteration="iterator">
 							<li class="slider--item" data-index="{iterator.index}">
 								<f:render partial="Hero/Item" section="Main" arguments="{
-									identifier: element.data.identifier
+									identifier: element.data.identifier,
 									header: element.data.title,
 									headerLayout: element.data.title_type,
 									text: element.data.bodytext,
