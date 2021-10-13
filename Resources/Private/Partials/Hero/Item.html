@@ -2,7 +2,7 @@
 	<f:layout name="Default" />
 	<f:section name="Main">
 		<f:spaceless>
-			<div class="hero {f:if(condition: '{xo:media.isImage(file: media)}', then: 'hero--image')}">
+			<div class="hero {f:if(condition: '{xo:media.isImage(file: media)}', then: 'hero--image')}{f:if(condition: '{xo:media.isVideo(file: media)}', then: 'hero--video hero--video-played')}">
 				<f:render partial="Hero/Content" section="Main" arguments="{_all}" />
 
 				<f:if condition="{media} && {xo:media.isImage(file: media)}">
@@ -10,7 +10,7 @@
 				</f:if>
 
 				<f:if condition="{media} && {xo:media.isVideo(file: media)}">
-					<f:render partial="Hero/Media" section="Video" arguments="{media: media, settings: settings}" />
+					<f:render partial="Hero/Media" section="Video" arguments="{media: media, settings: settings, identifier: identifier}" />
 				</f:if>
 			</div>
 		</f:spaceless>

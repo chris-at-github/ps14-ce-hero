@@ -38,8 +38,6 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 		// Hero Slider
 		if($processedData['data']['CType'] === 'ce_hero_slider') {
 			$this->addImportJsFiles(['/assets/js/tiny-slider.js' => ['forceOnTop' => true]]);
-
-
 		}
 
 		return parent::process($contentObject, $contentObjectConfiguration, $processorConfiguration, $processedData);

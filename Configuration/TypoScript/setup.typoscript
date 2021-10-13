@@ -37,6 +37,10 @@ tt_content {
 				importCss {
 					10 = /assets/css/modules/hero.css
 				}
+
+				importJs {
+					10 = /assets/js/hero.js
+				}
 			}
 		}
 	}

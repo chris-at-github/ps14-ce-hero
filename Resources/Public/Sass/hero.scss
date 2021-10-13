@@ -9,6 +9,7 @@
 // Variablen
 $ce-hero--use-css: true !default;
 $ce-hero--layout-default: true !default;
+$ce-hero--layout-video: true !default;
 $ce-hero--layout-slider: true !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -45,14 +46,99 @@ $ce-hero--layout-slider: true !default;
 		}
 	}
 
+	@if($ce-hero--layout-video) {
+		.hero--video {
+			video {
+				max-width: 100%;
+			}
+
+			.hero--video-control-play {
+				@extend %button--rounded-icon;
+				position: absolute;
+				bottom: rem(10px);
+				left: rem(10px);
+			}
+
+			.hero--video-control-play-default {
+				left: 2px;
+			}
+
+			.hero--video-control-play-large,
+			.hero--video-control-pause-large {
+				display: none;
+			}
+
+			&.hero--video-played {
+				.hero--video-control-play-default {
+					display: none;
+				}
+			}
+
+			&.hero--video-paused {
+				.hero--video-control-pause-default {
+					display: none;
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			.hero--video {
+				--button--rounded-icon-size: #{rem(96px)};
+				--button--rounded-icon-svg-size: #{rem(32px)};
+
+				.hero--video-control-play {
+					bottom: auto;
+					top: 50%; left: 50%;
+					transform: translate(-50%,-50%);
+					opacity: 0;
+					transition: opacity $transition-duration;
+				}
+
+				.hero--video-control-play-default,
+				.hero--video-control-pause-default {
+					display: none;
+				}
+
+				.hero--video-control-play-large {
+					left: 3px;
+				}
+
+				&.hero--video-played {
+					.hero--video-control-pause-large {
+						display: block;
+					}
+				}
+
+				&.hero--video-paused {
+					.hero--video-control-play-large {
+						display: block;
+					}
+				}
+
+				&:hover, .focusable &:focus {
+					.hero--video-control-play {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			.hero--video {
+				--button--rounded-icon-size: #{rem(128px)};
+				--button--rounded-icon-svg-size: #{rem(40px)};
+			}
+		}
+	}
+
 	.ce-hero--layout-16-9 {
-		.hero--image {
+		.hero--image, .hero--video {
 			& {
 				position: relative;
 				padding-top: 56.25%;
 			}
 
-			img {
+			img, video {
 				position: absolute;
 				top: 0; left: 0; right: 0;
 			}

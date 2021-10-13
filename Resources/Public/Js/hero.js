@@ -44,5 +44,42 @@
 				xna.fireEvent('CeHero_AfterSliderInitialize', {node: node, slider: slider});
 			});
 		}
+
+		// bestehende Padding auslesen und Scrollbar-Breite auf alle Container addieren
+		document.addEventListener('CeHero_Video_Play_Pause', function(event) {
+			let node = event.detail.node;
+			let video = node.querySelector('video');
+
+			if(video.paused === true) {
+				video.play();
+
+				node.classList.add('hero--video-played');
+				node.classList.remove('hero--video-paused');
+
+			} else {
+				video.pause();
+
+				node.classList.add('hero--video-paused');
+				node.classList.remove('hero--video-played');
+			}
+		});
+
+		// Video in Hero
+		document.querySelectorAll('.hero--video').forEach(function(node, index) {
+			let video = node.querySelector('video');
+			let control = node.querySelector('.hero--video-control-play');
+
+			if(video !== null && control !== null) {
+				video.addEventListener('click', function(event) {
+					xna.fireEvent('CeHero_Video_Play_Pause', {node: node});
+					event.preventDefault();
+				});
+
+				control.addEventListener('click', function(event) {
+					xna.fireEvent('CeHero_Video_Play_Pause', {node: node});
+					event.preventDefault();
+				});
+			}
+		});
 	});
 })();

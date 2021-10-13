@@ -22,12 +22,22 @@
 	<f:section name="Video">
 		<f:render partial="Components/Media" section="Video" arguments="{
 				file: media,
+				additionalAttributes: {
+					id: 'hero-video-{identifier -> xo:format.trim()}'
+				},
 				options: {
 					autoplay: 1,
 					controls: 0,
 					loop: 1
 				}
 			}" />
+
+		<button class="hero--video-control-play" aria-controls="hero-video-{identifier -> xo:format.trim()}" aria-label="{f:translate(key: 'LLL:EXT:ce_hero/Resources/Private/Language/locallang_frontend.xlf:video.controlPlay')}">
+			<xo:svg.inline attributes="{class: 'hero--video-control-play-default'}" source="assets/svg/play.svg" />
+			<xo:svg.inline attributes="{class: 'hero--video-control-play-large'}" source="assets/svg/play-large.svg" />
+			<xo:svg.inline attributes="{class: 'hero--video-control-pause-default'}" source="assets/svg/pause.svg" />
+			<xo:svg.inline attributes="{class: 'hero--video-control-pause-large'}" source="assets/svg/pause-large.svg" />
+		</button>
 	</f:section>
 
 	<f:section name="Background">
