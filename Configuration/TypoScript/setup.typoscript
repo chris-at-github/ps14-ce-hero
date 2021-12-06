@@ -72,7 +72,7 @@ tt_content {
 				where {
 					data = field:uid
 					intval = 1
-					wrap = tx_xo_content=|
+					wrap = foreign_uid=|
 				}
 				orderBy = sorting
 
