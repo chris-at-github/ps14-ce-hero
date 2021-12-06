@@ -31,7 +31,7 @@
 					controls: (controls !== null),
 					controlsContainer: controls,
 					nav: (navigation !== null),
-					navContainer: navigation.querySelector('ul'),
+					navContainer: (navigation !== null ? navigation.querySelector('ul') : false),
 					onInit: function() {
 						xna.addSliderInitializedClass(node);
 						xna.fixFocusInSlider(node, slider);
