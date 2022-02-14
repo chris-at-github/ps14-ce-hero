@@ -42,7 +42,7 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['
 	'maxitems' => 1,
 ];
 
-$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['tx_xo_file']['l10n_mode'] = 'exclude';
+//$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['tx_xo_file']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['pi_flexform']['l10n_mode'] = 'exclude';
 
 // ---------------------------------------------------------------------------------------------------------------------
