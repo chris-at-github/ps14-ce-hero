@@ -24,17 +24,130 @@ tt_content {
 				references.fieldName = image
 			}
 
-			120 = Ps14\CeHero\DataProcessing\ModuleProcessor
-			120 {
+			110 = Ps\Xo\DataProcessing\FlexFormProcessor
+			110 {
+				fieldName = pi_flexform
+				as = flexform
+			}
+
+			120 = Ps\Xo\DataProcessing\SettingsProcessor
+
+			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			130 {
 				importCss {
 					10 = /assets/css/modules/hero.css
+				}
+
+				importJs {
+					10 = /assets/js/modules/hero.js
 				}
 			}
 		}
 	}
 
-#	xo_hero_slider =< tt_content.xo_slider
-#	xo_hero_slider {
-#		templateName = HeroSlider.html
-#	}
+	ce_hero_slider =< tt_content.xo_slider
+	ce_hero_slider {
+		templateName = HeroSlider.html
+		layoutRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Layouts/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Layouts/
+		}
+
+		templateRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Templates/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Templates/
+		}
+
+		partialRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Partials/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Partials/
+		}
+
+		dataProcessing {
+			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+			30 {
+				as = elements
+				table = tx_xo_domain_model_elements
+				pidInList.field = pid
+				where {
+					data = field:uid
+					intval = 1
+					wrap = foreign_uid=|
+				}
+				orderBy = sorting
+
+				dataProcessing {
+					10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+					10 {
+						as = media
+						references.fieldName = media
+					}
+				}
+			}
+
+			110 = Ps\Xo\DataProcessing\FlexFormProcessor
+			110 {
+				fieldName = pi_flexform
+				as = flexform
+			}
+
+			120 = Ps\Xo\DataProcessing\SettingsProcessor
+
+			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			130 {
+				importCss {
+					10 = /assets/css/modules/hero.css
+				}
+
+				importJs {
+					10 = /assets/js/modules/hero.js
+				}
+			}
+		}
+	}
 }
+
+plugin.tx_xo.settings.modules {
+	ce_hero {
+		layouts {
+			// fullwidth = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layouts.fullwidth
+			16-9 = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layouts.16_9
+		}
+
+		image {
+			renderMode = image
+
+// 			Beispiel-Konfiguration
+//
+//			width = 1200
+//			cropVariant = default
+//			mediaQueries {
+//				0 {
+//					maxWidth = 576
+//					cropVariant = default
+//					mediaQuery = (min-width: 0px)
+//				}
+//
+//				1 {
+//					maxWidth = 768
+//					cropVariant = default
+//					mediaQuery = (min-width: 576px)
+//				}
+//
+//				2 {
+//					maxWidth = 992
+//					cropVariant = default
+//					mediaQuery = (min-width: 768px)
+//				}
+//
+//				3 {
+//					maxWidth = 1200
+//					cropVariant = default
+//					mediaQuery = (min-width: 992px)
+//				}
+//			}
+		}
+	}
+}
+
+module.tx_xo.settings.modules.ce_hero < plugin.tx_xo.settings.modules.ce_hero

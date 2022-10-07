@@ -1,0 +1,72 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.tab.main</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.layout type="array">
+						<TCEforms>
+							<label>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layout</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.ce_hero.layouts</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.layout>
+				</el>
+			</ROOT>
+		</main>
+		<slider>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.tab.slider</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<!--
+					<settings.slider.controls type="array">
+						<TCEforms>
+							<label>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.slider.settings.controls</label>
+							<config>
+								<type>check</type>
+								<default>0</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.slider.controls>
+					-->
+					<settings.slider.navigation type="array">
+						<TCEforms>
+							<label>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.slider.settings.navigation</label>
+							<config>
+								<type>check</type>
+								<default>0</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.slider.navigation>
+				</el>
+			</ROOT>
+		</slider>
+	</sheets>
+</T3DataStructure>
