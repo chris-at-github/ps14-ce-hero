@@ -1,25 +1,25 @@
 mod.wizards.newContentElement.wizardItems {
 	common {
 		elements {
-			ce_hero {
+			ps14_hero {
 				iconIdentifier = content-image
-				title = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.title
-				description = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.description
+				title = LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:hero.title
+				description = LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:hero.description
 				tt_content_defValues {
-					CType = ce_hero
+					CType = ps14_hero
 				}
 			}
 
-			ce_hero_slider {
+			ps14_hero_slider {
 				iconIdentifier = content-image
-				title = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.title
-				description = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.description
+				title = LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:hero-slider.title
+				description = LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:hero-slider.description
 				tt_content_defValues {
-					CType = ce_hero_slider
+					CType = ps14_hero_slider
 				}
 			}
 		}
 
-		show := addToList(ce_hero, ce_hero_slider)
+		show := addToList(ps14_hero, ps14_hero_slider)
 	}
 }

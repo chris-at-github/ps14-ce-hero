@@ -6,21 +6,21 @@
 		<main>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.tab.main</sheetTitle>
+					<sheetTitle>LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:tab.main</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 					<settings.layout type="array">
 						<TCEforms>
-							<label>LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layout</label>
+							<label>LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:settings.layout</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
 								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
-									<identifier>modules.ce_hero.layouts</identifier>
-									<extension>xo</extension>
+									<identifier>layouts</identifier>
+									<extension>Ps14Hero</extension>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>

@@ -1,19 +1,19 @@
 tt_content {
-	ce_hero =< lib.contentElement
-	ce_hero {
+	ps14_hero =< lib.contentElement
+	ps14_hero {
 		templateName = Hero.html
 		layoutRootPaths {
-			10 = EXT:ce_hero/Resources/Private/Layouts/
+			10 = EXT:ps14_hero/Resources/Private/Layouts/
 			20 = EXT:xna/Resources/Private/Extensions/CeHero/Layouts/
 		}
 
 		templateRootPaths {
-			10 = EXT:ce_hero/Resources/Private/Templates/
+			10 = EXT:ps14_hero/Resources/Private/Templates/
 			20 = EXT:xna/Resources/Private/Extensions/CeHero/Templates/
 		}
 
 		partialRootPaths {
-			10 = EXT:ce_hero/Resources/Private/Partials/
+			10 = EXT:ps14_hero/Resources/Private/Partials/
 			20 = EXT:xna/Resources/Private/Extensions/CeHero/Partials/
 		}
 
@@ -30,9 +30,9 @@ tt_content {
 				as = flexform
 			}
 
-			120 = Ps\Xo\DataProcessing\SettingsProcessor
+			// 120 = Ps\Xo\DataProcessing\SettingsProcessor
 
-			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			130 = Ps14\Ps14Hero\DataProcessing\ModuleProcessor
 			130 {
 				importCss {
 					10 = /assets/css/modules/hero.css
@@ -45,21 +45,21 @@ tt_content {
 		}
 	}
 
-	ce_hero_slider =< tt_content.xo_slider
-	ce_hero_slider {
+	ps14_hero_slider =< lib.contentElement
+	ps14_hero_slider {
 		templateName = HeroSlider.html
 		layoutRootPaths {
-			10 = EXT:ce_hero/Resources/Private/Layouts/
+			10 = EXT:ps14_hero/Resources/Private/Layouts/
 			20 = EXT:xna/Resources/Private/Extensions/CeHero/Layouts/
 		}
 
 		templateRootPaths {
-			10 = EXT:ce_hero/Resources/Private/Templates/
+			10 = EXT:ps14_hero/Resources/Private/Templates/
 			20 = EXT:xna/Resources/Private/Extensions/CeHero/Templates/
 		}
 
 		partialRootPaths {
-			10 = EXT:ce_hero/Resources/Private/Partials/
+			10 = EXT:ps14_hero/Resources/Private/Partials/
 			20 = EXT:xna/Resources/Private/Extensions/CeHero/Partials/
 		}
 
@@ -91,9 +91,9 @@ tt_content {
 				as = flexform
 			}
 
-			120 = Ps\Xo\DataProcessing\SettingsProcessor
+			// 120 = Ps\Xo\DataProcessing\SettingsProcessor
 
-			130 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			130 = Ps14\Ps14Hero\DataProcessing\ModuleProcessor
 			130 {
 				importCss {
 					10 = /assets/css/modules/hero.css
@@ -107,47 +107,45 @@ tt_content {
 	}
 }
 
-plugin.tx_xo.settings.modules {
-	ce_hero {
-		layouts {
-			// fullwidth = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layouts.fullwidth
-			16-9 = LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.settings.layouts.16_9
-		}
+plugin.tx_ps14hero.settings {
+	layouts {
+		fullwidth = LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:settings.layout.fullwidth
+		16-9 = LLL:EXT:ps14_hero/Resources/Private/Language/locallang_tca.xlf:settings.layout.16_9
+	}
 
-		image {
-			renderMode = image
+	image {
+		renderMode = image
 
-// 			Beispiel-Konfiguration
-//
-//			width = 1200
-//			cropVariant = default
-//			mediaQueries {
-//				0 {
-//					maxWidth = 576
-//					cropVariant = default
-//					mediaQuery = (min-width: 0px)
-//				}
-//
-//				1 {
-//					maxWidth = 768
-//					cropVariant = default
-//					mediaQuery = (min-width: 576px)
-//				}
-//
-//				2 {
-//					maxWidth = 992
-//					cropVariant = default
-//					mediaQuery = (min-width: 768px)
-//				}
-//
-//				3 {
-//					maxWidth = 1200
-//					cropVariant = default
-//					mediaQuery = (min-width: 992px)
-//				}
-//			}
-		}
+		//      Beispiel-Konfiguration
+		//
+		//      width = 1200
+		//      cropVariant = default
+		//      mediaQueries {
+		//        0 {
+		//          maxWidth = 576
+		//          cropVariant = default
+		//          mediaQuery = (min-width: 0px)
+		//        }
+		//
+		//        1 {
+		//          maxWidth = 768
+		//          cropVariant = default
+		//          mediaQuery = (min-width: 576px)
+		//        }
+		//
+		//        2 {
+		//          maxWidth = 992
+		//          cropVariant = default
+		//          mediaQuery = (min-width: 768px)
+		//        }
+		//
+		//        3 {
+		//          maxWidth = 1200
+		//          cropVariant = default
+		//          mediaQuery = (min-width: 992px)
+		//        }
+		//      }
 	}
 }
 
-module.tx_xo.settings.modules.ce_hero < plugin.tx_xo.settings.modules.ce_hero
+module.tx_ps14hero.settings < plugin.tx_ps14hero.settings

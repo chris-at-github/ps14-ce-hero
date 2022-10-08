@@ -1,6 +1,6 @@
 <?php
 
-namespace Ps14\CeHero\DataProcessing;
+namespace Ps14\Ps14Hero\DataProcessing;
 
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;

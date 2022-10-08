@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2021-05-05T06:25:54Z" product-name="ce_hero">
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-05-05T06:25:54Z" product-name="ps14_hero">
 		<header/>
 		<body>
-			<trans-unit id="tx_ce_hero.title">
+			<trans-unit id="hero.title">
 				<source>Hero</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero.description">
+			<trans-unit id="hero.description">
 				<source>Hero module</source>
 			</trans-unit>
 
-			<trans-unit id="tx_ce_hero_slider.title">
+			<trans-unit id="hero-slider.title">
 				<source>Hero Slider</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero_slider.description">
+			<trans-unit id="hero-slider.description">
 				<source>Hero slider module</source>
 			</trans-unit>
 
@@ -21,26 +21,26 @@
 				<source>Image</source>
 			</trans-unit>
 
-			<trans-unit id="tx_ce_hero.tab.main">
+			<trans-unit id="tab.main">
 				<source>General</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero.tab.slider">
+			<trans-unit id="tab.slider">
 				<source>Slider</source>
 			</trans-unit>
 
-			<trans-unit id="tx_ce_hero.settings.layout">
+			<trans-unit id="settings.layout">
 				<source>Layout</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero.settings.layouts.fullwidth">
+			<trans-unit id="settings.layout.fullwidth">
 				<source>Full Width</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero.settings.layouts.16_9">
+			<trans-unit id="settings.layout.16_9">
 				<source>16:9</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero.slider.settings.controls">
+			<trans-unit id="settings.slider.controls">
 				<source>Display controls</source>
 			</trans-unit>
-			<trans-unit id="tx_ce_hero.slider.settings.navigation">
+			<trans-unit id="settings.slider..navigation">
 				<source>Display navigation</source>
 			</trans-unit>
 		</body>
