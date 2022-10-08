@@ -23,7 +23,7 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 		}
 
 		// Einfaches Hero Modul
-		if($processedData['data']['CType'] === 'ce_hero') {
+		if($processedData['data']['CType'] === 'ps14_hero') {
 
 			// 1. Identifier generieren
 			$identifier = md5($processedData['data']['uid']);
@@ -36,7 +36,7 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 		}
 
 		// Hero Slider
-		if($processedData['data']['CType'] === 'ce_hero_slider') {
+		if($processedData['data']['CType'] === 'ps14_hero_slider') {
 			$this->addImportJsFiles(['/assets/js/libraries/tiny-slider.js' => ['forceOnTop' => true]]);
 		}
 
