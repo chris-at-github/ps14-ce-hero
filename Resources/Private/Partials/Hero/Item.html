@@ -6,7 +6,7 @@
 				<f:render partial="Hero/Content" section="Main" arguments="{_all}" />
 
 				<f:if condition="{media} && {xo:media.isImage(file: media)}">
-					<f:render partial="Hero/Media" section="{settings.image.renderMode -> xo:format.ucFirst()}" arguments="{media: media, settings: settings.image}" />
+					<f:render partial="Hero/Media" section="{settings.image.renderMode -> xo:format.ucFirst()}" arguments="{media: media, settings: settings.image, identifier: identifier}" />
 				</f:if>
 
 				<f:if condition="{media} && {xo:media.isVideo(file: media)}">
