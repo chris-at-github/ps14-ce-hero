@@ -6,11 +6,10 @@
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Variablen
-$ce-hero--use-css: true !default;
-$ce-hero--layout-default: true !default;
-$ce-hero--layout-video: true !default;
-$ce-hero--layout-slider: true !default;
-$ce-hero--layout-container: true !default;
+$ps14-hero--use-css: true !default;
+$ps14-hero--layout-default: true !default;
+$ps14-hero--layout-video: true !default;
+$ps14-hero--layout-slider: true !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Definitions
@@ -31,8 +30,8 @@ $ce-hero--layout-container: true !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // CSS
-@if($ce-hero--use-css) {
-	@if($ce-hero--layout-default) {
+@if($ps14-hero--use-css) {
+	@if($ps14-hero--layout-default) {
 		.ce-hero {
 			.hero--title {
 				@extend %hero--title;
@@ -46,7 +45,7 @@ $ce-hero--layout-container: true !default;
 		}
 	}
 
-	@if($ce-hero--layout-video) {
+	@if($ps14-hero--layout-video) {
 		.hero--video {
 			video {
 				max-width: 100%;
@@ -163,7 +162,7 @@ $ce-hero--layout-container: true !default;
 		}
 	}
 
-	@if($ce-hero--layout-slider) {
+	@if($ps14-hero--layout-slider) {
 		.ce-hero-slider {
 			.hero--image {
 				img {
@@ -322,9 +321,6 @@ $ce-hero--layout-container: true !default;
 				}
 			}
 		}
-	}
-	@if($ce-hero--layout-container) {
-
 	}
 }
 
