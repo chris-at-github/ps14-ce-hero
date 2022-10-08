@@ -3,7 +3,6 @@
 @import '../../../../xna/Resources/Public/Sass/functions';
 @import '../../../../xna/Resources/Public/Sass/variables';
 @import '../../../../xna/Resources/Public/Sass/mixins';
-@import '../../../../xna/Resources/Public/Sass/definitions';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Variablen
@@ -22,7 +21,7 @@ $ce-hero--layout-container: true !default;
 
 	&, h1, h2, h3, h4, h5, h6 {
 		font-size: rem(34px);
-		font-weight: $headings-font-weight;
+		font-weight: var(--header__font-weight);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -41,7 +40,7 @@ $ce-hero--layout-container: true !default;
 
 			.hero--image {
 				img {
-					@extend %image-responsive;
+					//@extend %image-responsive;
 				}
 			}
 		}
@@ -54,7 +53,7 @@ $ce-hero--layout-container: true !default;
 			}
 
 			.hero--video-control-play {
-				@extend %button--rounded-icon;
+				//@extend %button--rounded-icon;
 				position: absolute;
 				bottom: rem(10px);
 				left: rem(10px);
@@ -84,15 +83,12 @@ $ce-hero--layout-container: true !default;
 
 		@include media-breakpoint-up(lg) {
 			.hero--video {
-				--button--rounded-icon-size: #{rem(96px)};
-				--button--rounded-icon-svg-size: #{rem(32px)};
-
 				.hero--video-control-play {
 					bottom: auto;
 					top: 50%; left: 50%;
 					transform: translate(-50%,-50%);
 					opacity: 0;
-					transition: opacity $transition-duration;
+					transition: opacity var(--transition__duration-default);
 				}
 
 				.hero--video-control-play-default,
@@ -121,13 +117,6 @@ $ce-hero--layout-container: true !default;
 						opacity: 1;
 					}
 				}
-			}
-		}
-
-		@include media-breakpoint-up(lg) {
-			.hero--video {
-				--button--rounded-icon-size: #{rem(128px)};
-				--button--rounded-icon-svg-size: #{rem(40px)};
 			}
 		}
 	}
@@ -178,7 +167,7 @@ $ce-hero--layout-container: true !default;
 		.ce-hero-slider {
 			.hero--image {
 				img {
-					@extend %image-responsive;
+					//@extend %image-responsive;
 				}
 			}
 
@@ -231,31 +220,31 @@ $ce-hero--layout-container: true !default;
 
 				button {
 					& {
-						width: $spacing-medium;
+						width: var(--spacing--default);
 						height: 100px;
 					}
 
 					&:hover {
 						svg {
-							fill: $link-color-hover;
+							fill: var(--link__color-active);
 						}
 					}
 				}
 
 				svg {
 					width: 35px;
-					fill: $theme-color-primary;
+					fill: var(--link__color);
 					transition: fill 0.35s;
 				}
 			}
 
 			// Padding von .container-outer wieder aufheben
 			.slider--prev {
-				left: -$spacing-medium;
+				left: calc(-1 * var(--spacing--default));
 			}
 
 			.slider--next {
-				right: -$spacing-medium;
+				right: calc(-1 * var(--spacing--default));
 			}
 
 			.slider--navigation {
@@ -269,7 +258,7 @@ $ce-hero--layout-container: true !default;
 			// Layout 16:9
 			&.ce-hero--layout-16-9 {
 				.slider {
-					@extend %slider-navigation;
+					// @extend %slider-navigation;
 					padding: 56.25% 0 0 0;
 				}
 
