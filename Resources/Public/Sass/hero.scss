@@ -11,6 +11,10 @@ $ps14-hero--layout-default: true !default;
 $ps14-hero--layout-video: true !default;
 $ps14-hero--layout-slider: true !default;
 
+:root {
+	--hero--height: 80vh;
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Definitions
 %hero--title {
@@ -41,6 +45,44 @@ $ps14-hero--layout-slider: true !default;
 				img {
 					//@extend %image-responsive;
 				}
+			}
+		}
+
+		.ce-hero--layout-16-9 {
+			.hero--image, .hero--video {
+				& {
+					position: relative;
+					padding-top: 56.25%;
+				}
+
+				img, video {
+					position: absolute;
+					top: 0; left: 0; right: 0;
+				}
+			}
+		}
+
+		.ce-hero--layout-fullwidth {
+			--page__offset-top: 0;
+
+			.hero {
+				min-height: var(--hero--height);
+				padding-top: 0.1px;
+				padding-bottom: 0.1px;
+				background-position: center center;
+				background-size: cover;
+				position: relative;
+				z-index: 5;
+			}
+
+			.hero__background {
+				position: absolute;
+				top: -1px; bottom: -1px;
+				left: 0;
+				width: 100%;
+				z-index: -1;
+				background-position: center center;
+				background-size: cover;
 			}
 		}
 	}
@@ -117,48 +159,6 @@ $ps14-hero--layout-slider: true !default;
 					}
 				}
 			}
-		}
-	}
-
-	.ce-hero--layout-16-9 {
-		.hero--image, .hero--video {
-			& {
-				position: relative;
-				padding-top: 56.25%;
-			}
-
-			img, video {
-				position: absolute;
-				top: 0; left: 0; right: 0;
-			}
-		}
-	}
-
-	.ce-hero--layout-fullwidth {
-		.hero {
-			& {
-				min-height: rem(500px);
-				padding-top: 0.1px;
-				padding-bottom: 0.1px;
-				background-position: center center;
-				background-size: cover;
-				position: relative;
-				z-index: 5;
-			}
-
-			.container-inner {
-				margin-top: rem(35px);
-			}
-		}
-
-		.hero--background {
-			position: absolute;
-			top: -1px; bottom: -1px;
-			left: 0;
-			width: 100%;
-			z-index: -1;
-			background-position: center center;
-			background-size: cover;
 		}
 	}
 
