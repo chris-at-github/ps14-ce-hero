@@ -38,9 +38,75 @@ $GLOBALS['TCA']['tt_content']['types']['ps14_hero']['columnsOverrides']['bodytex
 	'richtextConfiguration' => 'xoDefault',
 ];
 
-$GLOBALS['TCA']['tt_content']['types']['ps14_hero']['columnsOverrides']['image']['config'] = [
-	'maxitems' => 1,
-];
+$GLOBALS['TCA']['tt_content']['types']['ps14_hero']['columnsOverrides']['image']['config'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+	'image',
+	[
+		'appearance' => [
+			'collapseAll' => 1,
+			'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+		],
+		'overrideChildTca' => [
+			'types' => [
+				'0' => [
+					'showitem' => '
+									--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+									--palette--;;filePalette'
+				],
+				\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+					'showitem' => '
+									--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+									--palette--;;filePalette'
+				],
+			],
+			'columns' => [
+				'crop' => [
+					'config' => [
+						'cropVariants' => [
+							'mobile' => [
+								'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.mobile',
+								'allowedAspectRatios' => [
+									'16_9' => [
+										'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
+										'value' => 16 / 9
+									],
+									'4_3' => [
+										'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+										'value' => 4 / 3
+									],
+									'NaN' => [
+										'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+										'value' => 0.0
+									],
+								],
+								'selectedRatio' => '16_9',
+							],
+							'desktop' => [
+								'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.desktop',
+								'allowedAspectRatios' => [
+									'16_9' => [
+										'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
+										'value' => 16 / 9
+									],
+									'4_3' => [
+										'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.4_3',
+										'value' => 4 / 3
+									],
+									'NaN' => [
+										'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+										'value' => 0.0
+									],
+								],
+								'selectedRatio' => '4_3',
+							],
+						]
+					]
+				]
+			]
+		],
+		'maxitems' => 1
+	],
+	$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+);
 
 //$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['tx_xo_file']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['types']['ps14_hero']['columnsOverrides']['pi_flexform']['l10n_mode'] = 'exclude';
