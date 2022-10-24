@@ -30,8 +30,6 @@ tt_content {
 				as = flexform
 			}
 
-			// 120 = Ps\Xo\DataProcessing\SettingsProcessor
-
 			130 = Ps14\Ps14Hero\DataProcessing\ModuleProcessor
 			130 {
 				importCss {
@@ -90,8 +88,6 @@ tt_content {
 				fieldName = pi_flexform
 				as = flexform
 			}
-
-			// 120 = Ps\Xo\DataProcessing\SettingsProcessor
 
 			130 = Ps14\Ps14Hero\DataProcessing\ModuleProcessor
 			130 {
