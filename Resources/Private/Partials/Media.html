@@ -16,18 +16,17 @@
 
 <f:section name="Background">
 	<f:variable name="heroBackground">
-		.hero-{identifier -> xo:format.trim()} .hero--background {
+		.hero-{identifier -> xo:format.trim()} {
 			background-image: url('{f:uri.image(image: media, cropVariant: "mobile", maxWidth: 900)}');
 		}
 
 		@media (min-width: 768px) {
-			.hero-{identifier -> xo:format.trim()} .hero--background {
+			.hero-{identifier -> xo:format.trim()} {
 				background-image: url('{f:uri.image(image: media, cropVariant: "desktop", maxWidth: 1800)}');
 			}
 		}
 	</f:variable>
 
-	<div class="hero--background"></div>
 	<xo:css.inlineCode name="hero-{identifier -> xo:format.trim()}" code="{heroBackground}" />
 </f:section>
 </html>

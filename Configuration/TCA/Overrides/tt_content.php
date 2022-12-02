@@ -1,7 +1,7 @@
 <?php
 
 // ---------------------------------------------------------------------------------------------------------------------
-// Icon Text Module von TT-Content
+// Hero
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
 		'LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.title',
@@ -12,12 +12,19 @@
 	'ce_hero'
 );
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+	'*',
+	'FILE:EXT:ce_hero/Configuration/FlexForms/Hero.xml',
+	'ce_hero'
+);
+
 $GLOBALS['TCA']['tt_content']['types']['ce_hero'] = [
 	'showitem' => '
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;xoHeader,bodytext,image,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;xoHeader, bodytext, image, pi_flexform,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+			--palette--;;xoPrint,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 			--palette--;;hidden,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
@@ -35,16 +42,61 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['
 	'maxitems' => 1,
 ];
 
+//$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['tx_xo_file']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['pi_flexform']['l10n_mode'] = 'exclude';
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Hero Slider
-//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-//	array(
-//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title',
-//		'xo_hero_slider',
-//		'content-textpic'
-//	),
-//	'CType',
-//	'xo_hero_slider'
-//);
-//
-//$GLOBALS['TCA']['tt_content']['types']['xo_hero_slider'] = $GLOBALS['TCA']['tt_content']['types']['xo_slider'];
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+	array(
+		'LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero_slider.title',
+		'ce_hero_slider',
+		'content-image'
+	),
+	'CType',
+	'ce_hero'
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+	'*',
+	'FILE:EXT:ce_hero/Configuration/FlexForms/HeroSlider.xml',
+	'ce_hero_slider'
+);
+
+$GLOBALS['TCA']['tt_content']['types']['ce_hero_slider'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;xoHeader, tx_xo_elements, pi_flexform,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;;hidden,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['ce_hero_slider']['columnsOverrides']['tx_xo_elements']['config']['foreign_label'] = 'uid';
+$GLOBALS['TCA']['tt_content']['types']['ce_hero_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca'] = [
+	'columns' => [
+		'record_type' => [
+			'config' => [
+				'items' => [
+					['LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.slider_image', 'ce_hero_slider_image'],
+				],
+				'default' => 'ce_hero_slider_image'
+			]
+		],
+
+	],
+	'types' => [
+		'ce_hero_slider_image' => [
+			'showitem' => '
+				l10n_diffsource, record_type, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access',
+		],
+	]
+];

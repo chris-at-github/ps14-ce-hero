@@ -1,31 +1,47 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-<f:section name="Main">
-	<f:spaceless>
-		<div class="slider">
-			<div class="slider--container">
-				<f:for each="{elements}" as="item" iteration="iterator">
-					<f:render section="Item" arguments="{_all}" />
-				</f:for>
-			</div>
+	<f:layout name="Default" />
+	<f:section name="Main">
+		<f:if condition="{elements -> f:count()} == 1">
+			<f:then>
+				<f:render partial="Hero/Item" section="Main" arguments="{
+				identifier: elements.0.data.identifier,
+				header: elements.0.data.title,
+				headerLayout: elements.0.data.title_type,
+				text: elements.0.data.bodytext,
+				media: elements.0.media.0,
+				settings: settings.modules.ce_hero
+			}" />
+			</f:then>
 
-			<f:render partial="Elements/Slider/Controls" section="Main" arguments="{_all}" />
-			<f:render partial="Elements/Slider/Navigation" section="Main" arguments="{_all}" />
-		</div>
-	</f:spaceless>
-</f:section>
+			<f:else if="{elements -> f:count()} > 1">
+				<div class="slider">
+					<ul class="slider--container">
+						<f:for each="{elements}" as="element" iteration="iterator">
+							<li class="slider--item" data-index="{iterator.index}">
+								<f:render partial="Hero/Item" section="Main" arguments="{
+									identifier: element.data.identifier,
+									header: element.data.title,
+									headerLayout: element.data.title_type,
+									text: element.data.bodytext,
+									media: element.media.0,
+									settings: settings.modules.ce_hero
+								}" />
+							</li>
+						</f:for>
+					</ul>
 
-<f:section name="Item">
-	<f:variable name="identifier">{data.uid}-{item.data.uid}</f:variable>
-
-	<div class="container-outer slider--item hero hero-{identifier}">
-		<div class="container-inner">
-			<f:render partial="Components/Hero" section="Content" arguments="{data: item.data, identifier: identifier}" />
-
-			<f:if condition="{item.media.0}">
-				<f:render partial="Components/Hero" section="Media" arguments="{media: item.media.0, identifier: identifier}" />
-			</f:if>
-		</div>
-	</div>
-</f:section>
+					<f:if condition="{flexform.settings.slider.controls} == 1 || {flexform.settings.slider.navigation} == 1">
+						<div class="slider--interface">
+							<f:if condition="{flexform.settings.slider.controls} == 1">
+								<f:render partial="Components/Slider" section="Controls" arguments="{icons: {prev: '/assets/svg/chevron-left.svg', next: '/assets/svg/chevron-right.svg'}}" />
+							</f:if>
+							<f:if condition="{flexform.settings.slider.navigation} == 1">
+								<f:render partial="Components/Slider" section="Navigation" arguments="{elements: elements}" />
+							</f:if>
+						</div>
+					</f:if>
+				</div>
+			</f:else>
+		</f:if>
+	</f:section>
 </html>
