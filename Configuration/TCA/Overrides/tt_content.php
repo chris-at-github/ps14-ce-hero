@@ -48,3 +48,41 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['
 //);
 //
 //$GLOBALS['TCA']['tt_content']['types']['xo_hero_slider'] = $GLOBALS['TCA']['tt_content']['types']['xo_slider'];
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Hero Container
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+	(
+	new \B13\Container\Tca\ContainerConfiguration(
+		'ce_hero_container', // CType
+		'LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.title', // label
+		'LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.description', // description
+		[
+			[
+				['name' => 'header', 'colPos' => 701, 'colspan' => 1, 'allowed' => ['CType' => 'header, text']],
+				['name' => 'additional', 'colPos' => 702, 'colspan' => 1, 'allowed' => ['CType' => 'header, text']]
+			],
+		] // grid configuration
+	)
+	)
+//		// set an optional icon configuration
+//		->setIcon('EXT:container_example/Resources/Public/Icons/b13-2cols-with-header-container.svg')
+);
+
+$GLOBALS['TCA']['tt_content']['types']['ce_hero_container'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;xoHeader,image,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;;hidden,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['ce_hero_container']['columnsOverrides']['image']['config'] = [
+	'maxitems' => 1,
+];

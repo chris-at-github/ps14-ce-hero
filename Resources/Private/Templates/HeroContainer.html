@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+	<f:section name="Header" />
+	<f:section name="Main">
+
+		<div class="hero--inner">
+			<f:if condition="{data.header} && {data.header_layout} != 100">
+				<header class="hero--title">
+					<f:render partial="Header/Header" arguments="{header: data.header, layout: data.header_layout}" />
+				</header>
+
+				<f:for each="{mainContent}" as="record">
+					<f:format.raw>{record.renderedContent}</f:format.raw>
+				</f:for>
+			</f:if>
+		</div>
+
+		<f:comment>
+			<f:debug>{_all}</f:debug>
+		</f:comment>
+
+		<f:spaceless>
+			<f:comment>
+				<f:render partial="Content" section="Main" arguments="{header: data.header, headerLayout: data.header_layout, text: data.bodytext}" />
+			</f:comment>
+
+			<f:if condition="{image.0}">
+				<f:render partial="Media" section="Main" arguments="{media: image.0, identifier: data.identifier}" />
+			</f:if>
+		</f:spaceless>
+	</f:section>
+</html>

@@ -33,6 +33,51 @@ tt_content {
 		}
 	}
 
+	ce_hero_container < lib.contentElement
+	ce_hero_container {
+		templateName = HeroContainer
+		layoutRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Layouts/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Layouts/
+		}
+
+		templateRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Templates/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Templates/
+		}
+
+		partialRootPaths {
+			10 = EXT:ce_hero/Resources/Private/Partials/
+			20 = EXT:xna/Resources/Private/Extensions/CeHero/Partials/
+		}
+		dataProcessing {
+			30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			30 {
+				as = image
+				references.fieldName = image
+			}
+
+			120 = Ps14\CeHero\DataProcessing\ModuleProcessor
+			120 {
+				importCss {
+					10 = /assets/css/modules/hero.css
+				}
+			}
+
+			701 = B13\Container\DataProcessing\ContainerProcessor
+			701 {
+				colPos = 701
+				as = mainContent
+			}
+
+			702 = B13\Container\DataProcessing\ContainerProcessor
+			702 {
+				colPos = 702
+				as = additionalContent
+			}
+		}
+	}
+
 #	xo_hero_slider =< tt_content.xo_slider
 #	xo_hero_slider {
 #		templateName = HeroSlider.html
