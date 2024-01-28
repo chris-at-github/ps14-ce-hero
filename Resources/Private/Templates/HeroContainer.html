@@ -15,9 +15,14 @@
 			</f:if>
 		</div>
 
-		<f:comment>
-			<f:debug>{_all}</f:debug>
-		</f:comment>
+
+		<f:if condition="{additionalContent}">
+			<div class="hero--additional">
+				<f:for each="{additionalContent}" as="record">
+					<f:format.raw>{record.renderedContent}</f:format.raw>
+				</f:for>
+			</div>
+		</f:if>
 
 		<f:spaceless>
 			<f:comment>
