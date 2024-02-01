@@ -59,8 +59,8 @@ $GLOBALS['TCA']['tt_content']['types']['ce_hero']['columnsOverrides']['image']['
 		'LLL:EXT:ce_hero/Resources/Private/Language/locallang_tca.xlf:tx_ce_hero.description', // description
 		[
 			[
-				['name' => 'header', 'colPos' => 701, 'colspan' => 1, 'allowed' => ['CType' => 'header, text']],
-				['name' => 'additional', 'colPos' => 702, 'colspan' => 1, 'allowed' => ['CType' => 'header, text']]
+				['name' => 'Main', 'colPos' => 701, 'colspan' => 1, 'allowed' => ['CType' => 'header, text']],
+				['name' => 'Additional', 'colPos' => 702, 'colspan' => 1, 'allowed' => ['CType' => 'header, text']]
 			],
 		] // grid configuration
 	)
